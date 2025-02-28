@@ -1,0 +1,99 @@
+/* Reset and Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    padding-left: 50px; /* Adds space on the left */
+}
+
+/* Navigation Bar (Teal) */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: teal;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: teal;
+}
+
+/* Prevent content from being hidden under fixed navbar */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Page Content (Left-aligned) */
+.page-content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left */
+    padding-left: 50px; /* Adds spacing on the left */
+}
+
+/* Card Styling (Extra Wide Cards) */
+.card {
+    background: white;
+    width: 250%; 
+    max-width: 250%; 
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: left; /* Aligns text to the left */
+}
+
+.card-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: teal;
+}
+
+.card-body {
+    font-size: 18px;
+}
+
+/* Bounce Effect When Clicking a Navigation Link */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+}
+
+.card:target {
+    animation: bounce 0.5s ease-in-out;
+}
